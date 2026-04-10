@@ -11,6 +11,7 @@ import { loadKey, hasStoredKey, isWorkingGroup, clearKey } from "@/lib/apiKey";
 import { supabase } from "@/lib/supabase";
 import { getDeviceId } from "@/lib/deviceId";
 import { useOrchestrate } from "@/hooks/useOrchestrate";
+import Link from "next/link";
 
 export default function Home() {
   // ── API 키 상태 ──
@@ -285,6 +286,15 @@ export default function Home() {
             <line x1="15" y1="12" x2="3" y2="12" />
           </svg>
         </button>
+
+        {/* 데일리 브리핑 버튼 */}
+        <Link
+          href="/daily-briefing"
+          className="absolute top-3 right-3 z-20 px-3 py-1.5 rounded-full flex items-center justify-center bg-black/30 hover:bg-black/50 transition-colors text-xs font-bold text-white/80 backdrop-blur-md"
+          title="데일리 브리핑 생성기"
+        >
+          📰 브리핑
+        </Link>
 
         {/* 메인: 디바이스 목업 */}
         <div

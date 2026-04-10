@@ -92,3 +92,10 @@ ${news}
     );
   }
 }
+
+export async function GET() {
+  return NextResponse.json(
+    { message: "API is active. Please use POST method to generate briefing." },
+    { status: 200 }
+  );
+}
